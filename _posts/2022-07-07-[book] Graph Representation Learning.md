@@ -3,6 +3,8 @@ layout: post
 author: huyi
 ---
 
+[toc]
+
 # chap1 Introduction
 
 ## 1.1 What is a graph?
@@ -17,15 +19,14 @@ simple graph，directed graph, directed graph with weighted edges可以由adjace
 different types of edges
 extend the edge notation to include an edge or relation type $\tau$ , e.g., $(u, \tau, v)\in\mathcal{E}$,对于每一种type $\tau$ 可以有一个adjacency matrix-->adjacency tensor $\mathcal{A}\in\mathbb{R}^{\mathcal{|V|\times|R|\times|V|}}$, 其中 $\mathcal{R}$是 relations的集合
 
-#### **Heterogeneous graphs**
+* **Heterogeneous graphs**
 nodes也有types, 根据这些type可以把nodes分成各不相交的k个集合：
 <br>$\mathcal{V=V_1\cup V_2\cup…\cup V_k}$ where $\mathcal{V_i\cup V_j}=\emptyset$
-
-一般来说，一种relation专门连接两种特定的节点，比如$\tau_i$ 专门连接$\mathcal{V_k} and \mathcal{V_j}$
+<br>一般来说，一种relation专门连接两种特定的节点，比如$\tau_i$ 专门连接$\mathcal{V_k} and \mathcal{V_j}$
 
 也有可以连接多种节点类型的relation type
 
-#### **Multiplex graphs**
+* **Multiplex graphs**
 图可以被分成k layers, each layer corresponds to a unique relation.
 
     Intra-layer edges: 一种专门的edge
