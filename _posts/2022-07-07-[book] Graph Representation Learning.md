@@ -124,5 +124,52 @@ $$\lambda e=\mathsf{A}e$$
 simply aggregating nodelevel statistics
 
 **The Weisfeiler-Lehman kernel**
+iterative neighborhood aggregation: 通过迭代来包含整个图的信息（neighbour的neighbour的neighbour……）
+
+basic idea:
+1. assign an initial label $l^{(0)}(v)$ to each node. 通常使用digree这个feature: $l^{(0)}(v)=d_v$
+2. **iteratively** assign a new label to each node by hashing the multiset of the current labels within the node’s neighborhood
+  ![image.png](https://s2.loli.net/2022/07/08/9vqZzFxfuBwJeAh.png)
+  上述公式里面的“{{*}}”表示multi-set(其中可以有重复的数),HASH表示一种映射:
+    HASH:$\mathbb{R}^{|\mathcal{N}|}\rightarrow\mathbb{R}$
+<font color=yellow>? 确认一下neighbourhood包不包含点自身</font>
+3. K次迭代后，$l^{(K)}(v)$代表了K-hop neighbourhood --> feature representation for the graph
+
+<font color="PowderBlue">这里相当于对graph进行卷积,局域性 & 平移不变性</font>
+
 
 **Graphlets and path-based methods**
+node-level discussion中, 有一种确定graph feature的方法是数某种特征的subgraph的数量, 在此可以叫 **graphlet**.
+
+the graphlet kernel:
+- enumerating all possible graph **structures** of a particular size
+- **counting** how many times they occur in the full graph
+
+alternative to enumerating:path-based method
+
+    只需要关心graph中不同的paths.
+    比如：the random walk kernel (2003) involves running random walks over the graph and then counting the occurrence of different degree sequences
+    比如：shortest-path kernel (2005) involves a similar idea but uses only the shortest-paths between nodes (rather than random walks)
+
+  <font color="yellow">? 没太搞懂这个方法 <br>? degree sequence是啥</font>
+
+## 2.2 Neighborhood Overlap Detection
+回顾上节：
+
+    上节讲node/graph-level features.
+
+上节问题：
+
+    这些features并不能quantify the relationships between nodes
+    上面的features对relation prediction任务就没什么大用
+
+本节关心的：
+- **neighborhood overlap** between pairs of nodes-->关心一对点之间二者的相关性有多强(pair of nodes)
+- 最简单的方法:$\mathsf{S}[u,v]=|\mathcal{N}(u)\cap\mathcal{N}(v)|$
+  $\mathsf{S}\in\mathbb{R}^{\mathcal{|V|\times|V|}}$是similarity matrix-->summarizing all the pairwise node statistics
+- Adjacency matrix 和 similarity matrix之间的关系
+![image.png](https://s2.loli.net/2022/07/08/WtrfQTeOzMCRUj1.png)
+
+### 2.2.1 Local overlap measures
+Sorensen index: 一个$\mathcal{|V|\times|V|}$维的矩阵
+![image.png](https://s2.loli.net/2022/07/08/QytJHuAaM5jVKCZ.png)
