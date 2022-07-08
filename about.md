@@ -3,6 +3,6 @@ layout: post
 title: About
 ---
 
-This is an example page!
+This is a blank page now ~
 
-Actually, it has the same layout of a post...
+Mayebe you're interested in [paper reading](https://aheadofpotato.github.io/blog) ?

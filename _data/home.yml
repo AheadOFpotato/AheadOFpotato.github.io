@@ -22,7 +22,6 @@ project_entries:
 
 footer_entries:
   - title: my github
-    desc: if you like this page, give me a star on my github~
     url: https://github.com/AheadOFpotato/AheadOFpotato.github.io
 
   - title: feed
