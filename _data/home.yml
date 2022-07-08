@@ -10,9 +10,12 @@ navbar_entries:
     url: https://www.abhinav.co
 
 project_entries:
-  - title: Project 1
-    url: query2box
-    desc: sample
+  - title: lab meeting
+    url: false
+    desc: lab meeting
+    entries:
+     - title: 2022-07-08-lab-meeting
+       url: lab meeting
 
   - title: Project 2
     url: overview-post

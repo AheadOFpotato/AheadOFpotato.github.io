@@ -1,6 +1,6 @@
 title: huyi's research paper reading
-author: Abhinav Saxena
-url: https://www.abhinavsaxena.com/moonwalk # root address of the site
+author: huyi
+url: https://aheadofpotato.github.io/ # root address of the site
 description: > # description of the site (multiple lines allowed)
   更新文献阅读笔记，以及日后的研究进展
 
@@ -28,7 +28,7 @@ theme_config:
   show_projects: true # show projects as cards, add in _data/home.yml
   show_blog: true # show blog posts added in _posts
   show_old_projects: true # show old projects as cards, add in _data/home.yml
-  show_misc_list: false # show generic vertical list for misc details, add _data/home.yml
+  show_misc_list: true # show generic vertical list for misc details, add _data/home.yml
   # options for "home" page
   home:
     title_projects: Projects
