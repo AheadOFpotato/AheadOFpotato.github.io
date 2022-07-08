@@ -95,6 +95,34 @@ standard setup：有一堆nodes $\mathcal{V}$, 一堆incomplete set of edges $\m
 
 **Node degree**
 
-$d_u=\sum\limits_{u\in V}\mathsf{A}[u,v]$ 表示这个节点伸出来的边的个数
+$d_u=\sum\limits_{u\in V}\mathsf{A}[u,v]$表示这个节点伸出来的边的个数
 
 **Node centrality**
+$$e_u=\frac{1}{\lambda}\sum\limits_{v\in V}\mathsf{A}[u,v]e_v$$
+即centrality和neighbour的centrality 的 weighted sum成正比，其中$\lambda$为一个常数,按照上面的公式,可以发现e是Adjacency matrix的本征矢：
+$$\lambda e=\mathsf{A}e$$
+
+还有其他的centrality：
+* **betweeness centrality**: how often a node lies on the shortest path between two other nodes
+* **closeness centrality**: measures the average shortest path length between a node and all other nodes
+
+**The clustering coefficient**
+- -->structural distinction
+-->proportion of closed triangles in a node’s local neighborhood
+-->how many pairs of nodes there are in u’s neighborhood
+![image.png](https://s2.loli.net/2022/07/07/eBDRVzHrtnm3biX.png)
+- another way of viewing:
+  ego graph: the subgraph containing that node,, its neighbors, and all the edges between nodes in its neighborhood
+
+### 2.1.2 Graph-level features and graph kernels
+- 先前的讨论都是node-level的，无论是classification problem还是features 和 statistics.
+- 那 **graph-level** classification怎么办？
+  这一节的大多方法算在graph kernel methods中
+  [graph kernels,Kriege et al. 2020](https://arxiv.org/abs/1903.11835)
+
+**Bag of nodes**
+simply aggregating nodelevel statistics
+
+**The Weisfeiler-Lehman kernel**
+
+**Graphlets and path-based methods**

@@ -5,12 +5,13 @@ navbar_entries:
   - title: paper reading
     url: blog
 
+
   - title: website
     url: https://www.abhinav.co
 
 project_entries:
   - title: Project 1
-    url: overview-post
+    url: query2box
     desc: sample
 
   - title: Project 2
@@ -20,12 +21,9 @@ project_entries:
 
 
 footer_entries:
-
-  - title: twitter
-    url: https://twitter.com/abhinav
-
-  - title: github
-    url: https://github.com/abhinavs
+  - title: my github
+    desc: if you like this page, give me a star on my github~
+    url: https://github.com/AheadOFpotato
 
   - title: feed
     url: feed.xml
