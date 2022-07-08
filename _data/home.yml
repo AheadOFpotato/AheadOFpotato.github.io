@@ -11,11 +11,11 @@ navbar_entries:
 
 project_entries:
   - title: lab meeting
-    url: blog
-    desc: lab meeting
+    url: labmeeting_list
+    desc: from 2022/7/8 to ?
     entries:
      - title: 2022-07-08-lab-meeting
-       url: lab meeting
+       url: labmeeting1
 
   - title: Project 2
     url: overview-post
