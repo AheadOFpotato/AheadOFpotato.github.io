@@ -10,12 +10,9 @@ navbar_entries:
     url: https://www.abhinav.co
 
 project_entries:
-  - title: lab meeting
-    url: labmeeting_list
-    desc: from 2022/7/8 to ?
-    entries:
-     - title: 2022-07-08-lab-meeting
-       url: labmeeting1
+  - title: lab meeting 1
+    url: labmeeting1
+    desc: 2022/7/8
 
   - title: Project 2
     url: overview-post
