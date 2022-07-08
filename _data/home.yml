@@ -11,7 +11,7 @@ navbar_entries:
 
 project_entries:
   - title: lab meeting
-    url: false
+    url: default
     desc: lab meeting
     entries:
      - title: 2022-07-08-lab-meeting
