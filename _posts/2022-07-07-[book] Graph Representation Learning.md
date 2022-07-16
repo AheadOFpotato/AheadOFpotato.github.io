@@ -198,8 +198,11 @@ alternative to enumerating:path-based method
 只考虑local overlap(1-hop)不够：two nodes could have no local overlap in their neighborhoods but still be members of the same community in the graph.
 
 * __Katz index__
- ![image.png](https://s2.loli.net/2022/07/16/EWDFq8hdV3XZjPU.png)
 
+  ![image.png](https://s2.loli.net/2022/07/16/EWDFq8hdV3XZjPU.png)
+  根据下面的理论可以改写成这个形式:
+  
+  ![image.png](https://s2.loli.net/2022/07/16/74i6NJZkQh8anr5.png)
   $\mathsf{A}^i[u,v]$表示了从u到v，i步的path的条数。
 
   如果$\beta<1$，long path的权重就会降低
@@ -207,7 +210,7 @@ alternative to enumerating:path-based method
   >__Geometric series of matrices__
     > Theorem 1. *Let X be a real-valued square matrix and let λ1 denote the largest eigenvalue of X.*,，则有：
     <br>$\mathsf{(I-X)^{-1}}=\sum\limits_{i=0}^{\infin}\mathsf{X^i}$
-    <br>当且仅当 λ1 < 1 且(I-X)满秩。
+    <br>当且仅当 λ1 < 1 且 (I-X) 满秩。
 
 
 
