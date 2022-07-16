@@ -168,8 +168,48 @@ alternative to enumerating:path-based method
 - 最简单的方法:$\mathsf{S}[u,v]=|\mathcal{N}(u)\cap\mathcal{N}(v)|$
   $\mathsf{S}\in\mathbb{R}^{\mathcal{|V|\times|V|}}$是similarity matrix-->summarizing all the pairwise node statistics
 - Adjacency matrix 和 similarity matrix之间的关系
-![image.png](https://s2.loli.net/2022/07/08/WtrfQTeOzMCRUj1.png)
+
+  ![image.png](https://s2.loli.net/2022/07/08/WtrfQTeOzMCRUj1.png)
 
 ### 2.2.1 Local overlap measures
-Sorensen index: 一个$\mathcal{|V|\times|V|}$维的矩阵
-![image.png](https://s2.loli.net/2022/07/08/QytJHuAaM5jVKCZ.png)
+* __Sorensen index:__ 一个$\mathcal{|V|\times|V|}$维的矩阵
+
+  ![image.png](https://s2.loli.net/2022/07/08/QytJHuAaM5jVKCZ.png)
+
+* __Salton index:__
+
+  ![image.png](https://s2.loli.net/2022/07/16/nPdLmuVBTwsARz8.png)
+
+* __Jaccard overlap:__
+
+  ![image.png](https://s2.loli.net/2022/07/16/TvIwN4me7fQCgOJ.png)
+
+* __Resource Allocation (RA) index__  counts the inverse degrees of the common neighbors
+
+  ![image.png](https://s2.loli.net/2022/07/16/gGXZyhNiwdJ2Ec4.png)
+
+* __Adamic-Adar (AA) index__ performs a similar computation using the inverse logarithm of the degrees
+
+  ![image.png](https://s2.loli.net/2022/07/16/4epRSZCUyT8gID9.png)
+
+以上两种 index 相当于给了 __low-degree neighbour__ 更高的权重，因为直觉上，a shared low-degree neighbor is more informative than a shared high-degree one.
+
+### 2.2.2 Global overlap measures
+只考虑local overlap(1-hop)不够：two nodes could have no local overlap in their neighborhoods but still be members of the same community in the graph.
+
+* __Katz index__
+ ![image.png](https://s2.loli.net/2022/07/16/EWDFq8hdV3XZjPU.png)
+
+  $\mathsf{A}^i[u,v]$表示了从u到v，i步的path的条数。
+
+  如果$\beta<1$，long path的权重就会降低
+
+  >__Geometric series of matrices__
+    > Theorem 1. *Let X be a real-valued square matrix and let λ1 denote the largest eigenvalue of X.*,，则有：
+    <br>$\mathsf{(I-X)^{-1}}=\sum\limits_{i=0}^{\infin}\mathsf{X^i}$
+    <br>当且仅当 λ1 < 1 且(I-X)满秩。
+
+
+
+
+*
