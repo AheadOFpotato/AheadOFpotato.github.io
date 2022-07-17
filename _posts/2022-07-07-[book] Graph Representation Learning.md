@@ -197,22 +197,92 @@ alternative to enumerating:path-based method
 ### 2.2.2 Global overlap measures
 只考虑local overlap(1-hop)不够：two nodes could have no local overlap in their neighborhoods but still be members of the same community in the graph.
 
-* __Katz index__
+#### __Katz index__
 
   ![image.png](https://s2.loli.net/2022/07/16/EWDFq8hdV3XZjPU.png)
   根据下面的理论可以改写成这个形式:
-  
+
   ![image.png](https://s2.loli.net/2022/07/16/74i6NJZkQh8anr5.png)
   $\mathsf{A}^i[u,v]$表示了从u到v，i步的path的条数。
 
   如果$\beta<1$，long path的权重就会降低
 
   >__Geometric series of matrices__
+
     > Theorem 1. *Let X be a real-valued square matrix and let λ1 denote the largest eigenvalue of X.*,，则有：
+
     <br>$\mathsf{(I-X)^{-1}}=\sum\limits_{i=0}^{\infin}\mathsf{X^i}$
+
     <br>当且仅当 λ1 < 1 且 (I-X) 满秩。
 
 
+#### Leicht, Holme, and Newman (LHN) similarity
+
+* __Katz index的问题:__
+  strongly biased by node degree, 容易给high-degree nodes更高的similarity score
+
+* __new method:__
+  ratio between the actual number of observed paths and the number of expected paths between two nodes
+
+  ![image.png](https://s2.loli.net/2022/07/17/FC8RqGBt4rx2Wna.png)
+
+  * __E [ A^i ] 的计算__
+    利用 *configuration model*
+    assumes that we draw a random graph with the same set of degrees as our given graph.
+    -->![image.png](https://s2.loli.net/2022/07/17/G12tW3xUrNT6ge8.png)
+
+    其中m是所有图中一共有多少条边。random configuration model下，两个节点间的edge出现的可能性和两节点各自的度数正相关。
+
+    <font color=NavyBlue>可以这么理解：有d_u条边离开u，每条边有d_v/2m的机会最后到v</font>
+
+    <font color=Yellow>? 为什么是d_v/2m</font>
+
+    ![image.png](https://s2.loli.net/2022/07/17/qY4n3HQMPGrZlCS.png)
+
+    $v_1$-->u-->$v_2$
+    $\frac{d_{v_1}d_{v_2}}{2m}\cdot\frac{d_{v_2}(d_{u}-1)}{2m}$
+
+  * __问题：__
+    3-hop以上就很难算
+
+  * __3-hop及以上的问题：__
+    * the largest eigenvalue can be used to approximate the growth in the number of paths.
+
+    其中p_i是节点u跟其他节点间长为i的路径条数。
+
+      ![image.png](https://s2.loli.net/2022/07/17/DxClj5NfYE2eius.png)
+
+      <font color=yellow>为什么p_i会收敛到eigenvector?</font>
+
+      ![image.png](https://s2.loli.net/2022/07/17/AdprZ4Xklh5Px2I.png)
+
+      ![image.png](https://s2.loli.net/2022/07/16/jtlykn9CpZhYIDH.png)
+
+      ![image.png](https://s2.loli.net/2022/07/16/87SdW4NZaubkYFK.png)
+
+      D是表示节点数量的对角阵
+
+#### Random walk methods
+stochastic matrix $P = AD^{-1}$
+![image.png](https://s2.loli.net/2022/07/17/S4esdMa8OxmIolw.png)
+
+solution:
+
+![image.png](https://s2.loli.net/2022/07/17/d4PgSC1X52WBeEr.png)
+
+-->
+![image.png](https://s2.loli.net/2022/07/17/7Cu8fUAxhgmzGW4.png)
+
+## 2.3 Graph Laplacians and Spectral Methods
+
+### 2.3.1 Graph Laplacians
 
 
-*
+---
+<font size=10>PART I : Node Embeddings</font>
+
+# chap 3: Neighborhood Reconstruction Methods
+
+# chap 4: Multi-relational Data and Knowledge Graphs
+---
+<font size=10>PART I : Node Embeddings</font>
