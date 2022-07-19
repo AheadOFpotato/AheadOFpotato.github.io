@@ -1,0 +1,102 @@
+---
+layout: post
+title: [book] 西瓜书
+author: huyi
+---
+[toc]
+----
+# chap1 绪论
+## 1.1 引言
+* __learning algorithm:__ 从数据中产生模型的算法
+* 有些文献用“模型”指全局性结果，e.g.决策树；用“模式”指代局域性结果。
+
+## 1.2 基本术语
+* __数据集 dataset__：
+  很多个事件/对象对应的数据
+    >e.g.(色泽：绿，敲声：响)，(色泽：绿，敲声：响)
+
+* __示例 instance/ 样本 sample__：
+  数据集中关于一个事件/对象的描述
+
+* __属性 attribute/ 特征 feature__：
+  反映事件或对象在某方面的表现或性质的事项
+  >e.g. 色泽，敲声
+
+* __属性值 attribute value__
+
+* __属性空间(attribute space)/ 样本空间(sample space)__
+  把attribute作为坐标轴，则它们张成一个用于描述对象空间，每个对象对应这个空间中的一个点，一个instance称为一个特征向量(feature vector)
+
+* $D=\{x_1,x_2,…，x_m\}$表示有m个示例的数据集，每个示例由d个属性描述，$x_i=(x_{i1};x_{i2},…，x_{id})$.
+* d是x_i的 **维数**
+* __hypothesis__-->__ground truth__
+* __label__
+* __样例 example__：
+  有 label 的 sample，一般用$(\textbf{x}_i,y_i)$表示第i个样例
+    * **标记空间** $y_i \in \mathcal{Y}$
+  ----
+* __classification__
+  预测值是离散值
+  * binary classification
+  * multi-class classification
+
+* __regression__
+  预测值是连续值
+
+* __clustering__
+  unsupervised 的代表。
+
+  前两个任务是supervised的代表
+
+## 1.3 假设空间
+* 机器学习是 **归纳学习(inductive learning)**
+  * 广义的归纳学习：从样例中学习
+  * 狭义的归纳学习：概念学习/概念形成
+    * 最基本的： 布尔概念学习
+* 可以把学习过程看作一个在所有 hypothesis 组成的空间中进行搜索的过程，搜索目标是找到fit training set 的 hypothesis
+  * 可能可以找到多个和训练集一致的 hypothesis --> 假设集合 --> **版本空间 version space**
+
+### 1.4 归纳偏好
+
+？ 要解决的问题：如何在版本空间中进行选择 ？
+--> **归纳偏好 inductive bias**：机器学习算法在学习过程中对某种类型假设的偏好
+* 一般性原则来引导算法建立正确的偏好：
+  * 奥卡姆剃刀原理
+    >需要注意奥卡姆剃刀原理有着在不同情况下有着不同的诠释，譬如说两个看起来差不多的假设哪个更简单这个问题，在不同模型中是不一样的
+* NFL定理 (No Free Lunch Theorem :stuck_out_tongue_winking_eye:)
+  >假设样本空间 $\mathcal{X}$ 和假设空间 $\mathcal{H}$ 都是离散的。令 $P(h|X,\mathcal{L}_a)$ 代表算法$\mathcal{L}_a$ 基于训练数据$X$产生假设h的概率，再令f代表我们希望学习的真实目标函数。$\mathcal{L}_a$的训练集外误差：
+  >$$E_{ote}(\mathcal{L}_a|X,f)=\sum\limits_{h}\sum\limits_{x\in\mathcal{X}-X}\mathbb{I}(h(x)\neq f(x))P(h|X,\mathcal{L}_a)$$
+  ![image.png](https://s2.loli.net/2022/07/19/oq7RlWPnBxHVJXi.png)
+
+  :thought_balloon: <font color=NavyBlue>f 作为希望学习的真实目标函数，在这边取所有的可能函数，这并不能说明所有算法针对某一问题误差恒定，而是说，某个算法必不可能在所有问题上取得小误差，擅长一些问题便必然不擅长另一些 ~</font>
+
+  >上面的式子说明的问题是总误差与学习算法无关！
+  >-->脱离具体问题，空谈什么算法更好没有意义！
+
+### chap1 习题
+#### 1.1
+
+| 编号| 色泽     | 根蒂      | 声音      | 好瓜？|
+|---| ---------- | ---------- | ---------- |---|
+|1| 青绿| 蜷缩 | 浊响 | 是 |
+|2| 乌黑 | 稍蜷 | 沉闷 | 否 |
+**上述表格对应的版本空间？假设三个attributes都只有三种书上给出的取法？**
+
+:thinking:
+| 编号| 色泽     | 根蒂      | 声音      |
+|---| ---------- | ---------- | ---------- |
+|1| 青绿| 蜷缩 | 浊响 |
+|2| * | 蜷缩 | 浊响 |
+|3|青绿| * | 浊响 |
+|4|青绿| 蜷缩 | * |
+|5|*| * | 浊响 |
+|6|青绿| * | * |
+|7|*| 蜷缩 | * |
+这里假定不包含非A的操作。
+
+#### 1.2
+每个attribute：$3+3+1=7$
+$7*7*7+1$
+
+#### 1.3
+选择假设使得训练错误累计最小。
