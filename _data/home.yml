@@ -11,7 +11,7 @@ navbar_entries:
 
 project_entries:
   - title: Graph Representation Learning
-    url: GRL
+    url: grl
     desc: William L. Hamilton
     highlight: book
 
