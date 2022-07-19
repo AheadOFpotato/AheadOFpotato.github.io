@@ -18,7 +18,7 @@ project_entries:
   - title: ML_watermellon book
     url: watermellon
     desc: 周志华 西瓜书
-    highlight: WIP
+    highlight: book
 
 
 footer_entries:
