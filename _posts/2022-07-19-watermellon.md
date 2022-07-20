@@ -44,8 +44,10 @@ author: huyi
 * __label__
 * __样例 example__：
   有 label 的 sample，一般用$(\textbf{x}_i,y_i)$表示第i个样例
-    * 标记空间 $y_i \in \mathcal{Y}$
+    * 标记空间$y_i \in \mathcal{Y}$
+
   ----
+
 * __classification__
   预测值是离散值
   * binary classification
@@ -76,7 +78,7 @@ author: huyi
     >需要注意奥卡姆剃刀原理有着在不同情况下有着不同的诠释，譬如说两个看起来差不多的假设哪个更简单这个问题，在不同模型中是不一样的
 * NFL定理 (No Free Lunch Theorem :stuck_out_tongue_winking_eye:)
   >假设样本空间 $\mathcal{X}$ 和假设空间 $\mathcal{H}$ 都是离散的。令 $P(h|X,\mathcal{L}_a)$ 代表算法$\mathcal{L}_a$ 基于训练数据$X$产生假设h的概率，再令f代表我们希望学习的真实目标函数。$\mathcal{L}_a$的训练集外误差：
-  >$E_{ote}(\mathcal{L}_a|X,f)=\sum\limits_{h}\sum\limits_{x\in\mathcal{X}-X}\mathbb{I}(h(x)\neq f(x))P(h|X,\mathcal{L}_a)$
+  $E_{ote}(\mathcal{L}_a|X,f)=\sum\limits_{h}\sum\limits_{x\in\mathcal{X}-X}\mathbb{I}(h(x)\neq f(x))P(h|X,\mathcal{L}_a)$
   ![image.png](https://s2.loli.net/2022/07/19/oq7RlWPnBxHVJXi.png)
 
   :thought_balloon: <font color=NavyBlue>f 作为希望学习的真实目标函数，在这边取所有的可能函数，这并不能说明所有算法针对某一问题误差恒定，而是说，某个算法必不可能在所有问题上取得小误差，擅长一些问题便必然不擅长另一些 ~</font>
@@ -87,10 +89,13 @@ author: huyi
 ### chap1 习题
 #### 1.1
 
-| 编号 | 色泽 | 根蒂 | 声音 | 好瓜？ |
-| ---- | ---- | ---- | ---- | ------ |
-| 1    | 青绿 | 蜷缩 | 浊响 | 是     |
-| 2    | 乌黑 | 稍蜷 | 沉闷 | 否     |
+<table align="center">
+  <tr><th align="center">编号</th><th align="center">色泽</th><th align="center">根蒂 </th><th align="center">声音</th><th align="center">好瓜？</th></tr>
+  <tr><td>1</td><td>青绿</td><td>蜷缩</td><td>浊响</td><td>是</td></tr>
+  <tr><td>2</td><td>乌黑</td><td>稍蜷</td><td>沉闷</td><td>否</td></tr>
+
+</table>
+
 **上述表格对应的版本空间？假设三个attributes都只有三种书上给出的取法？**
 
 :thinking:
@@ -114,5 +119,13 @@ author: huyi
 # chap2 模型评估与选择
 ## 2.1 经验误差与过拟合
 * __错误率 error rate：__
-  分类错误样本数占总数的比例：$E=$
-* __精度 accuracy__
+  分类错误样本数占总数的比例：$E=a/m$
+* __精度 accuracy:__
+  $1-a/m$
+* __训练误差(经验误差) training error/ 泛化误差 generalization error__
+  * 实际训练中，我们通常只能找一个训练误差极小的learner，但通常经验误差很小的leaner很可能泛化误差不小
+* __过拟合 overfitting/ 欠拟合 underfitting：__
+  过拟合是无法避免的，只能尽量减轻--> $P\neq NP$
+
+## 2.2 评估方法
+### 2.2.1 留出法
