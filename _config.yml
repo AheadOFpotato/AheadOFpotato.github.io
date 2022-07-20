@@ -46,3 +46,5 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-soopr-seo-tag
+
+markdown: kramdown

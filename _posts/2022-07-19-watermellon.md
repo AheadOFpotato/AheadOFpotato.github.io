@@ -3,6 +3,17 @@ layout: post
 title: watermellon book
 author: huyi
 ---
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
 [toc]
 ----
 # chap1 绪论
@@ -100,3 +111,9 @@ $7*7*7+1$
 
 #### 1.3
 选择假设使得训练错误累计最小。
+
+# chap2 模型评估与选择
+## 2.1 经验误差与过拟合
+* __错误率 error rate：__
+  分类错误样本数占总数的比例：$E=$
+* __精度 accuracy__
