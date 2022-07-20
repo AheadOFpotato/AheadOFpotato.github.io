@@ -76,7 +76,7 @@ author: huyi
     >需要注意奥卡姆剃刀原理有着在不同情况下有着不同的诠释，譬如说两个看起来差不多的假设哪个更简单这个问题，在不同模型中是不一样的
 * NFL定理 (No Free Lunch Theorem :stuck_out_tongue_winking_eye:)
   >假设样本空间 $\mathcal{X}$ 和假设空间 $\mathcal{H}$ 都是离散的。令 $P(h|X,\mathcal{L}_a)$ 代表算法$\mathcal{L}_a$ 基于训练数据$X$产生假设h的概率，再令f代表我们希望学习的真实目标函数。$\mathcal{L}_a$的训练集外误差：
-  >$$E_{ote}(\mathcal{L}_a|X,f)=\sum\limits_{h}\sum\limits_{x\in\mathcal{X}-X}\mathbb{I}(h(x)\neq f(x))P(h|X,\mathcal{L}_a)$$
+  >$E_{ote}(\mathcal{L}_a|X,f)=\sum\limits_{h}\sum\limits_{x\in\mathcal{X}-X}\mathbb{I}(h(x)\neq f(x))P(h|X,\mathcal{L}_a)$
   ![image.png](https://s2.loli.net/2022/07/19/oq7RlWPnBxHVJXi.png)
 
   :thought_balloon: <font color=NavyBlue>f 作为希望学习的真实目标函数，在这边取所有的可能函数，这并不能说明所有算法针对某一问题误差恒定，而是说，某个算法必不可能在所有问题上取得小误差，擅长一些问题便必然不擅长另一些 ~</font>
@@ -106,8 +106,7 @@ author: huyi
 这里假定不包含非A的操作。
 
 #### 1.2
-每个attribute：$3+3+1=7$
-$7*7*7+1$
+每个attribute：$3+3+1=7$, $7*7*7+1$
 
 #### 1.3
 选择假设使得训练错误累计最小。
