@@ -44,7 +44,7 @@ author: huyi
 * __label__
 * __样例 example__：
   有 label 的 sample，一般用$(\textbf{x}_i,y_i)$表示第i个样例
-    * **标记空间** $y_i \in \mathcal{Y}$
+    * 标记空间 $y_i \in \mathcal{Y}$
   ----
 * __classification__
   预测值是离散值
