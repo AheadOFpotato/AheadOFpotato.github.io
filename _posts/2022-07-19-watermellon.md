@@ -4,6 +4,12 @@ title: watermellon book
 author: huyi
 ---
 <head>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</head>
+<head>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -78,7 +84,7 @@ author: huyi
     >需要注意奥卡姆剃刀原理有着在不同情况下有着不同的诠释，譬如说两个看起来差不多的假设哪个更简单这个问题，在不同模型中是不一样的
 * NFL定理 (No Free Lunch Theorem :stuck_out_tongue_winking_eye:)
   >假设样本空间 $\mathcal{X}$ 和假设空间 $\mathcal{H}$ 都是离散的。令 $P(h|X,\mathcal{L}_a)$ 代表算法$\mathcal{L}_a$ 基于训练数据$X$产生假设h的概率，再令f代表我们希望学习的真实目标函数。$\mathcal{L}_a$的训练集外误差：
-  $E_{ote}(\mathcal{L}_a|X,f)=\sum\limits_{h}\sum\limits_{x\in\mathcal{X}-X}\mathbb{I}(h(x)\neq f(x))P(h|X,\mathcal{L}_a)$
+  \[E_{ote}(\mathcal{L}_a|X,f)=\sum\limits_{h}\sum\limits_{x\in\mathcal{X}-X}\mathbb{I}(h(x)\neq f(x))P(h|X,\mathcal{L}_a)\]
   ![image.png](https://s2.loli.net/2022/07/19/oq7RlWPnBxHVJXi.png)
 
   :thought_balloon: <font color=NavyBlue>f 作为希望学习的真实目标函数，在这边取所有的可能函数，这并不能说明所有算法针对某一问题误差恒定，而是说，某个算法必不可能在所有问题上取得小误差，擅长一些问题便必然不擅长另一些 ~</font>
@@ -111,7 +117,7 @@ author: huyi
 这里假定不包含非A的操作。
 
 #### 1.2
-每个attribute：$3+3+1=7$, $7*7*7+1$
+每个attribute：$3+3+1=7$,$7*7*7+1$
 
 #### 1.3
 选择假设使得训练错误累计最小。
@@ -129,3 +135,104 @@ author: huyi
 
 ## 2.2 评估方法
 ### 2.2.1 留出法
+把数据集分成两个互斥集合——训练集$S$ 和测试集$T$
+* 需要保证测试集和训练集数据分布尽可能一致 --> 分层采样
+* 一般用 $2/3$ 或 $4/5$ 的样本用于训练
+### 2.2.2 交叉验证法（cross validation）
+* **k折交叉验证 k-fold cross validation**
+  * 先把数据集$D$分为k个大小相似的互斥子集。
+  * 每个子集数据分布尽量一致 --> 分层采样
+  * 每次用k-1个子集的并集作为训练集，剩下的子集作为测试集
+  * 这样就可以获得k组训练/测试集
+  * 可以进行k次训练/测试
+  * 最终返回k次测试结果的均值
+  * 叫 **k折交叉验证 k-fold cross validation**
+  * 通常用10(5,20)
+* **p次k折交叉验证**
+  * 将数据集$D$划分为k个子集有多种方式，随机使用不同的划分p次，最后的评估结果是p次交叉验证结果的均值
+  * 常用“10次10折交叉验证”
+* **留一法 Leave-One-Out (LOO)**
+  * 每一折里面只有一个sample
+  * 评估比较精确
+  * 但是训练复杂度在dataset比较大的时候比较高
+
+### 2.2.3 自助法（bootstrapping）
+适用于数据集较小，无法有效划分训练集和测试集的时候
+### 2.2.4 调参与最终模型
+**validation set：** 模型评估与选择中用于评估测试的数据集
+
+## 2.3 性能度量 (performance measure)
+给定样例$D=\{(\textbf{x}_1,y_1),…,(\textbf{x}_m,y_m)\}$,需要量化f(x)与y的差别。
+* 回归任务中，常用“均方误差”(mean squared error):
+\[E(f;D)=\frac{1}{m}\sum\limits_{i=1}^{m}(f(x_i)-y_1)^2\]
+
+* 连续的均方误差\[E(f;D)=\int_{x\sim D}(f(x)-y)^2p(x)\rm{d}x\]
+
+### 2.3.1 错误率与精度
+对样例$D$，
+* 分类错误率
+  * \[E(f;D)=\frac{1}{m}\sum\limits_{i=1}^{m}\mathbb{I}(f(x_i)\neq y_i)\]
+  * \[E(f,D)=\int_{x\sim D}\mathbb{I}(f(x_i)\neq y_i)p(x)\rm{d}x\]
+* 精度
+  * \[acc(f;D)=\frac{1}{m}\sum\limits_{i=1}^{m}\mathbb{I}(f(x_i)= y_i)=1-E\]
+  * 连续谱情况也是$1-E$
+
+### 2.3.2 查准率、查全率与 F1
+问题：
+1. 检索出的信息中有多少比例是用户感兴趣的？
+2. 用户感兴趣的信息中有多少被检索出来了？
+
+  --> **查准率 precision**、**查全率 recall**
+  下面这个表叫 **二分类混淆矩阵**
+<table>
+	<tr>
+	    <td rowspan=2>真实情况</th>
+	    <td colspan="2">预测结果</th>
+	</tr >
+	<tr >
+	    <td>正例</td>
+	    <td>反例</td>
+	</tr>
+	<tr>
+	    <td>正例</td>
+	    <td>TP（真正例）</td>
+      <td>FN（假反例）</td>
+	</tr>
+	<tr>
+	    <td>反例</td>
+	    <td>FP（假正例）</td>
+      <td>TN（真反例）</td>
+	</tr>
+</table>
+
+* __查准率 precision__
+  \[P=\frac{TP}{TP+FP}\]
+* __查全率 recall__
+  \[R=\frac{TP}{TP+FN}\]
+* 通常查准率和查全率是矛盾的，一个高一个就低
+* __PR图__
+  根据learner的预测结果对样例进行排序，排在前面的是learner认为“最可能”是正例的样本，排在最后的是learner认为“最不可能”是正例的样本。按此顺序逐个把样本作为正例进行预测按此顺序逐个把样本作为正例进行预测，则每次可以计算出当前的查全率、查准率 --> P是纵轴，R是横轴，则可以作出PR图。
+  <br>过（0，1）和（1，0）
+* __通过PR图判断learner的性能：__
+  * 若一个学习器的P-R曲线被另一个学习器完全“包住”，则可断言后者性能优于前者 --> 若有交叉？
+  * __平衡点 Break-Even Point (BEP)__
+    “查准率=查全率”时的取值，越高越好
+  * __F1度量__
+    \[F_1=\frac{2\times P\times R}{P+R}=\frac{2\times TP}{样例总数+TP-TN}\]
+    基于P和R的`调和平均`定义：
+    \[\frac{1}{F_1}=\frac{1}{2}(\frac{1}{P}+\frac{1}{R})\]
+  * 更一般地，__$F_{\beta}$__
+    \[\frac{1}{F_{\beta}}=\frac{1}{1+\beta^2}(\frac{1}{P}+\frac{\beta^2}{R})\]
+    $\beta>1$时，查全率有更大影响；
+    $\beta<1$时，查准率有更大影响。
+* 多个二分类混淆矩阵的情况
+  例如多次训练/测试，或在多个训练集上训练/测试
+  * __宏查准率 macro-P__、__宏查全率macro-R__、__宏F1__
+    在多个二分类混淆矩阵上计算出P、R，然后取平均。
+    \[macro-P=\frac{1}{n}\sum_{i=1}^{n}P_i\]
+    \[macro-R=\frac{1}{n}\sum_{i=1}^{n}R_i\]
+    \[macro-F_1=\frac{2\times macroP\times macroR}{macroP+macroR}\]
+  * __微查准率 micro-P__、__微查全率micro-R__、__微F1__
+
+### 2.3.3 ROC 与 AUC
+
