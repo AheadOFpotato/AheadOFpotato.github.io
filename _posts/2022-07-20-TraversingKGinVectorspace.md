@@ -51,14 +51,20 @@ a `new “compositional” training objective`, which dramatically improves all 
 
 # 2. Task
 ### 一些定义：
-* __path query:__
+* **path query:**
   q有一个 anchor entity：s，然后还有一系列的转换关系$p=(r_1,…,r_k)$
-* __The answer or denotation of the query,$[\![q]\!]$:__
+* **The answer or denotation of the query,$[\![q]\!]$:**
   the set of all entities that can be reached from s by traversing p
-* __candidate answers $\mathcal{C}(q)$:__
+* **candidate answers $\mathcal{C}(q)$:**
   有一个$r_k$（p中最后一个relation）连到它的entity的集合
-* __incorrect answers $\mathcal{N}(q)$:__
+* **incorrect answers $\mathcal{N}(q)$:**
   \[\mathcal{N}(q)=\mathcal{C}(q)\setminus[\![q]\!]\]
 
 ## Knowledge base completion
-* __Knowledge base completion (KBC)__：  task of predicting whether a given edge (s, r, t) belongs in the graph or not.
+* **Knowledge base completion (KBC)**：
+  task of predicting whether a given edge (s, r, t) belongs in the graph or not.
+  * 可以看作一个path query：q = s / r，有一个candidate answer t
+  <font color=NavyBlue>显然这边的candidate跟上面说的candidate定义就不一样了</font>
+
+# 3. Compositionalization
+--> **compositionalize** existing KBC models to answer path queries

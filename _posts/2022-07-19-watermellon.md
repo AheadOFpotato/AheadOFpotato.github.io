@@ -24,45 +24,45 @@ author: huyi
 ----
 # chap1 绪论
 ## 1.1 引言
-* __learning algorithm:__ 从数据中产生模型的算法
+* **learning algorithm:** 从数据中产生模型的算法
 * 有些文献用“模型”指全局性结果，e.g.决策树；用“模式”指代局域性结果。
 
 ## 1.2 基本术语
-* __数据集 dataset__：
+* **数据集 dataset**：
   很多个事件/对象对应的数据
     >e.g.(色泽：绿，敲声：响)，(色泽：绿，敲声：响)
 
-* __示例 instance/ 样本 sample__：
+* **示例 instance/ 样本 sample**：
   数据集中关于一个事件/对象的描述
 
-* __属性 attribute/ 特征 feature__：
+* **属性 attribute/ 特征 feature**：
   反映事件或对象在某方面的表现或性质的事项
   >e.g. 色泽，敲声
 
-* __属性值 attribute value__
+* **属性值 attribute value**
 
-* __属性空间(attribute space)/ 样本空间(sample space)__
+* **属性空间(attribute space)/ 样本空间(sample space)**
   把attribute作为坐标轴，则它们张成一个用于描述对象空间，每个对象对应这个空间中的一个点，一个instance称为一个特征向量(feature vector)
 
 * $D=\{x_1,x_2,…，x_m\}$表示有m个示例的数据集，每个示例由d个属性描述，$x_i=(x_{i1};x_{i2},…，x_{id})$.
 * d是x_i的 **维数**
-* __hypothesis__-->__ground truth__
-* __label__
-* __样例 example__：
+* **hypothesis**-->**ground truth**
+* **label**
+* **样例 example**：
   有 label 的 sample，一般用$(\textbf{x}_i,y_i)$表示第i个样例
     * 标记空间$y_i \in \mathcal{Y}$
 
   ----
 
-* __classification__
+* **classification**
   预测值是离散值
   * binary classification
   * multi-class classification
 
-* __regression__
+* **regression**
   预测值是连续值
 
-* __clustering__
+* **clustering**
   unsupervised 的代表。
 
   前两个任务是supervised的代表
@@ -124,13 +124,13 @@ author: huyi
 
 # chap2 模型评估与选择
 ## 2.1 经验误差与过拟合
-* __错误率 error rate：__
+* **错误率 error rate：**
   分类错误样本数占总数的比例：$E=a/m$
-* __精度 accuracy:__
+* **精度 accuracy:**
   $1-a/m$
-* __训练误差(经验误差) training error/ 泛化误差 generalization error__
+* **训练误差(经验误差) training error/ 泛化误差 generalization error**
   * 实际训练中，我们通常只能找一个训练误差极小的learner，但通常经验误差很小的leaner很可能泛化误差不小
-* __过拟合 overfitting/ 欠拟合 underfitting：__
+* **过拟合 overfitting/ 欠拟合 underfitting：**
   过拟合是无法避免的，只能尽量减轻--> $P\neq NP$
 
 ## 2.2 评估方法
@@ -205,34 +205,33 @@ author: huyi
 	</tr>
 </table>
 
-* __查准率 precision__
+* **查准率 precision**
   \[P=\frac{TP}{TP+FP}\]
-* __查全率 recall__
+* **查全率 recall**
   \[R=\frac{TP}{TP+FN}\]
 * 通常查准率和查全率是矛盾的，一个高一个就低
-* __PR图__
+* **PR图**
   根据learner的预测结果对样例进行排序，排在前面的是learner认为“最可能”是正例的样本，排在最后的是learner认为“最不可能”是正例的样本。按此顺序逐个把样本作为正例进行预测按此顺序逐个把样本作为正例进行预测，则每次可以计算出当前的查全率、查准率 --> P是纵轴，R是横轴，则可以作出PR图。
   <br>过（0，1）和（1，0）
-* __通过PR图判断learner的性能：__
+* **通过PR图判断learner的性能：**
   * 若一个学习器的P-R曲线被另一个学习器完全“包住”，则可断言后者性能优于前者 --> 若有交叉？
-  * __平衡点 Break-Even Point (BEP)__
+  * **平衡点 Break-Even Point (BEP)**
     “查准率=查全率”时的取值，越高越好
-  * __F1度量__
+  * **F1度量**
     \[F_1=\frac{2\times P\times R}{P+R}=\frac{2\times TP}{样例总数+TP-TN}\]
     基于P和R的`调和平均`定义：
     \[\frac{1}{F_1}=\frac{1}{2}(\frac{1}{P}+\frac{1}{R})\]
-  * 更一般地，__$F_{\beta}$__
+  * 更一般地，**$F_{\beta}$**
     \[\frac{1}{F_{\beta}}=\frac{1}{1+\beta^2}(\frac{1}{P}+\frac{\beta^2}{R})\]
     $\beta>1$时，查全率有更大影响；
     $\beta<1$时，查准率有更大影响。
 * 多个二分类混淆矩阵的情况
   例如多次训练/测试，或在多个训练集上训练/测试
-  * __宏查准率 macro-P__、__宏查全率macro-R__、__宏F1__
+  * **宏查准率 macro-P**、**宏查全率macro-R**、**宏F1**
     在多个二分类混淆矩阵上计算出P、R，然后取平均。
     \[macro-P=\frac{1}{n}\sum_{i=1}^{n}P_i\]
     \[macro-R=\frac{1}{n}\sum_{i=1}^{n}R_i\]
     \[macro-F_1=\frac{2\times macroP\times macroR}{macroP+macroR}\]
-  * __微查准率 micro-P__、__微查全率micro-R__、__微F1__
+  * **微查准率 micro-P**、**微查全率micro-R**、**微F1**
 
 ### 2.3.3 ROC 与 AUC
-
