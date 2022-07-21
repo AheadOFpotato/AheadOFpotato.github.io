@@ -21,8 +21,25 @@ author: huyi
     </script>
 </head>
 
-[toc]
+- [0. Abstract](#0-abstract)
+    - [? 解决什么问题](#-解决什么问题)
+    - [? recent models](#-recent-models)
+    - [? recent models的问题](#-recent-models的问题)
+    - [? 这篇文章干了什么](#-这篇文章干了什么)
+- [1. Introduction](#1-introduction)
+    - [? 模型能做到什么](#-模型能做到什么)
+- [2. Task](#2-task)
+    - [一些定义：](#一些定义)
+  - [Knowledge base completion](#knowledge-base-completion)
+- [3. Compositionalization](#3-compositionalization)
+  - [3.1 Motivating Example](#31-motivating-example)
+  - [3.2 General technique](#32-general-technique)
+  - [3.3 Compositional training](#33-compositional-training)
+
 ----
+<font color=NavyBlue size=5> 这篇文章主要讲的是一个针对path query的形式化的模型，不是很知道必要性在哪里:cry: </font>
+----
+
 
 # 0. Abstract
 
@@ -68,3 +85,22 @@ a `new “compositional” training objective`, which dramatically improves all 
 
 # 3. Compositionalization
 --> **compositionalize** existing KBC models to answer path queries
+## 3.1 Motivating Example
+* 对每个entity，learn一个$x_e\in\mathbb{R}^d$
+* 对每个relation，learn一个d*d维的矩阵$W_r$
+* 评估：t是不是 query：s/r 的 answer
+  ![image.png](https://s2.loli.net/2022/07/21/t9C1gKza4kFYG8E.png)
+
+## 3.2 General technique
+![image.png](https://s2.loli.net/2022/07/21/NIRo9WngJzdvj1e.png)
+
+$\mathbb{M}$是membership operator，检验了$x_t$是不是需要求的query的answer。$\mathbb{R}^d\times\mathbb{R}^d\rightarrow\mathbb{R}^d$
+
+$\mathbb{T}$是traversal operator，$\mathbb{R}^d\rightarrow\mathbb{R}^d$
+
+![image.png](https://s2.loli.net/2022/07/21/21iWdN3Ztw5S8Il.png)
+
+## 3.3 Compositional training
+minimize the following **max-margin objective**
+
+![image.png](https://s2.loli.net/2022/07/21/dDmtwgi1WuOY4qf.png)
