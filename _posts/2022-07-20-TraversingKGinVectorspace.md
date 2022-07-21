@@ -20,14 +20,45 @@ author: huyi
         });
     </script>
 </head>
+
 [toc]
 ----
-# Abstract
+
+# 0. Abstract
+
 ### ? 解决什么问题
+
 answer compositional questions
+
 ### ? recent models
+
 Recent models for knowledge base completion impute missing facts by embedding knowledge graphs in vector spaces
 `这篇文章说明了这些model可以用来answer path queries`
+
 ### ? recent models的问题
+
 answer path queries时，suffer from cascading errors
-### ? 
+
+### ? 这篇文章干了什么
+
+a `new “compositional” training objective`, which dramatically improves all models’ ability to answer path queries
+
+# 1. Introduction
+
+### ? 模型能做到什么
+* compositional training enables us to answer path queries up to at least length 5
+* improves upon state-of-the-art performance for knowledge base completion
+
+# 2. Task
+### 一些定义：
+* __path query:__
+  q有一个 anchor entity：s，然后还有一系列的转换关系$p=(r_1,…,r_k)$
+* __The answer or denotation of the query,$[\![q]\!]$:__
+  the set of all entities that can be reached from s by traversing p
+* __candidate answers $\mathcal{C}(q)$:__
+  有一个$r_k$（p中最后一个relation）连到它的entity的集合
+* __incorrect answers $\mathcal{N}(q)$:__
+  \[\mathcal{N}(q)=\mathcal{C}(q)\setminus[\![q]\!]\]
+
+## Knowledge base completion
+* __Knowledge base completion (KBC)__：  task of predicting whether a given edge (s, r, t) belongs in the graph or not.
