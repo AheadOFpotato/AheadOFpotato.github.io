@@ -235,3 +235,14 @@ author: huyi
   * **微查准率 micro-P**、**微查全率micro-R**、**微F1**
 
 ### 2.3.3 ROC 与 AUC
+<font color=NavajoWhite size=10>to be continued</font>
+
+# chap3 线性模型
+## 3.1 基本形式
+给定由d个属性描述的示例$\textbf{x}=(x_1,…,x_d)$，线性模型试图学得一个通过属性线性组合来预测的函数，
+\[f(\bm{x})=w_1x_1+w_2x_2+…+w_dx_d+b\]
+向量形式写作：
+\[f(\bm{x})=\bm{w}^T\bm{x}+b\]
+## 3.2 线性回归
+\[D=\{(\bm{x_1},y_1),…,(\bm{x_m},y_m)\}\]
+我们要找一个$f(x_i)$
