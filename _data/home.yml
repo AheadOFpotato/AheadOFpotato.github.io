@@ -20,6 +20,10 @@ project_entries:
     desc: 周志华 西瓜书
     highlight: book
 
+  - title: cs229
+    url: cs229
+    desc: 吴恩达 机器学习
+    highlight: course
 
 footer_entries:
   - title: my github
