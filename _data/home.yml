@@ -30,6 +30,11 @@ project_entries:
     desc: jure leskovec 图机器学习
     highlight: course
 
+  - title: ideas
+    url: ideas
+    desc: some brain doodlings
+    highlight: thoughts
+
 footer_entries:
   - title: my github
     url: https://github.com/AheadOFpotato/AheadOFpotato.github.io
