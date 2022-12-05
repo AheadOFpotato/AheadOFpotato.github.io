@@ -70,3 +70,77 @@ KALM-QA
   ![fig4](/_posts/2022-12-01-faithful/4.png)
 
 ## Syntatic parsing
+Attempto Parsing Engine (**APE**) as the top level parser
+* input and output
+    extracts:
+    * 每个词的词性
+    * grammatical relations
+
+    --> a list of stylized first-order terms: **discourse representation structure, or DRS**
+
+* example:
+    ![5](/_posts/2022-12-01-faithful/5.png)
+
+## frame-based parsing
+* **frame**
+  represents one or more related semantic relationships among entities, where each entity plays a particular role
+
+* example: MOVIE frame
+  ![6](/_posts/2022-12-01-faithful/6.png)
+
+  其中bn是同义词编号(based on BabelNet synsets)
+  一些role里面有严格的 type constraint
+* Ivp (logical valence patterns)
+  a lexical unit **&** a set of grammatical patterns, each associated with a frame role
+  * A grammatical pattern represents a grammatical relation between the lexical unit and a frame role.
+  *  An lvp is applicable to a sentence if
+    1.  the sentence contains the lexical unit
+    2.  the role-fillers for each frame role can be extracted based on the respective grammatical patterns.
+  * example:
+    ![7](/_posts/2022-12-01-faithful/7.png)
+* we call the extracted relation **a candidate parse**
+
+## Role-filler Disambiguation
+一个verb可能对应很多不同的frame，要看两边的名词能不能fit frame 对应的 role filler
+![7](/_posts/2022-12-01-faithful/9.png)
+
+## Constructing logical forms
+
+sematic relations extracted via Ivps -->
+* facts: unique logical representations (ULR)
+* queries: unique logical representation for queries(ULRQ) for questions
+
+*details later*
+
+# 3. The MetaQA Dataset and Multi-Hop Questions
+metaQA 对重复名字分辨不出来，里面有很多mislabeled questions
+
+# 4. Constructing a KALM Parser via Structural Learning
+
+这一节讲 frame-semantic parser 逐层的学习结构。
+
+先看用来做 role-filler 的 grammer patterns 是怎么学出来的；再看 Ivp是怎么在 training sentence 上 generate 的
+
+## 4.1 Learning Grammatical Patterns for Role -filler Extraction
+用以下的 **prolog** extraction rules:
+![10](/_posts/2022-12-01-faithful/10.png)
+* grammatical patterns and the corresponding extraction rules: *learned*
+<font color = yellow > machine learning 的的那个意义上的learn？</font>
+<font color=SkyBlue>halo</font>
+* structure-learning process:
+  * ACE(一种 CNL) --> DRS
+  * pairs in DRS (lexical unit, role-filler) --$^{KALM}$--> extraction rules
+    * construction of the library of utility rules
+    * reachability reasoning in DRS
+    * construction of the actual extraction rules
+## utility predicates and rules
+<font color=yellow>不是很能理解？</font>
+
+## reachability reasoning in DRS
+embed the DRS in a graph structure:
+1. For each term in DRS, create a node in the graph.
+2. For any pair of nodes n1, n2 that represent the DRS subterms p1, p2 that share a variable, create a directed labeled edge n1 → n2 and back. The label of the edge n1 → n2 is **the position** of the shared variable in p1 and the edge n2 → n1 is labeled with **the position** of that variable in p2.
+
+<font color=yellow>这里为什么用 position 来做 edge label? </font>
+
+# 5. Capturing the Meaning of Multi-Hop Questions in Logic

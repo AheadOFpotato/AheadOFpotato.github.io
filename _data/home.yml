@@ -25,15 +25,6 @@ project_entries:
     desc: 吴恩达 机器学习
     highlight: course
 
-  - title: cs224w
-    url: cs224w
-    desc: jure leskovec 图机器学习
-    highlight: course
-
-  - title: ideas
-    url: ideas
-    desc: some brain doodlings
-    highlight: thoughts
 
 footer_entries:
   - title: my github
