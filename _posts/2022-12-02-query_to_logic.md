@@ -22,7 +22,26 @@ author: huyi
     </script>
 </head>
 
-[toc]
+- [0. Abstract](#0-abstract)
+  - [difficulties to KRR](#difficulties-to-krr)
+  - [current work](#current-work)
+- [1. Introduction](#1-introduction)
+  - [what does KRR need](#what-does-krr-need)
+  - [controlled natural languages (CNL)](#controlled-natural-languages-cnl)
+  - [introduction of KALM](#introduction-of-kalm)
+  - [contributions](#contributions)
+- [2. The KALM system](#2-the-kalm-system)
+  - [Syntatic parsing](#syntatic-parsing)
+  - [frame-based parsing](#frame-based-parsing)
+  - [Role-filler Disambiguation](#role-filler-disambiguation)
+  - [Constructing logical forms](#constructing-logical-forms)
+- [3. The MetaQA Dataset and Multi-Hop Questions](#3-the-metaqa-dataset-and-multi-hop-questions)
+- [4. Constructing a KALM Parser via Structural Learning](#4-constructing-a-kalm-parser-via-structural-learning)
+  - [4.1 Learning Grammatical Patterns for Role -filler Extraction](#41-learning-grammatical-patterns-for-role--filler-extraction)
+  - [utility predicates and rules](#utility-predicates-and-rules)
+  - [reachability reasoning in DRS](#reachability-reasoning-in-drs)
+- [5. Capturing the Meaning of Multi-Hop Questions in Logic](#5-capturing-the-meaning-of-multi-hop-questions-in-logic)
+
 
 # 0. Abstract
 ## difficulties to KRR
