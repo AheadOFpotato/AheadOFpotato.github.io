@@ -47,10 +47,10 @@ two-stage method:
 ## Dataset
   modify the family tree dataset, only include one kind of update: change the name of one entity
 
-  ![fig](/_posts/2023-07-04/family_tree.png)
+  ![fig](2023-07-04/family_tree.png)
 
   text: *{entity_old} changes his or her name into {entity_new}.*
-    ![dataset](/_posts/2023-07-04/dataset.png)
+    ![dataset](2023-07-04/dataset.png)
 
 # 3. Results
 divide the task into two stages
@@ -61,13 +61,13 @@ divide the task into two stages
 * **Result:** the accuracy of added triples is low
 * **Reason:** the new triple (like **Dylan** in the showed figure) does not have any link to the other entities in the original KG, so it can be hard to form links between the new triple and the other triples
 
-![table1](/_posts/2023-07-04/table1.png)
+![table1](2023-07-04/table1.png)
 ## 3.2 Knowledge Insertion: MEMIT
 * **Result**:
   * MEMIT is not powerful enough to insert memories into GPT.
   * However, bigger models perform better.
 
-![table2](/_posts/2023-07-04/table2.png)
+![table2](2023-07-04/table2.png)
 
 # 4. Some Other Thoughts
 ## Flaws of MEMIT
