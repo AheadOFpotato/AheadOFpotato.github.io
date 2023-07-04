@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Locating and Editing Factual Associations in GPT
+title: GUpdater + MEMIT
 author: huyi
 ---
 <head>
