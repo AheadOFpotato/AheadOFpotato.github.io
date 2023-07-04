@@ -21,7 +21,17 @@ author: huyi
     </script>
 </head>
 
-[toc]
+- [1. Method](#1-method)
+- [2. Task and Dataset](#2-task-and-dataset)
+  - [Task](#task)
+  - [Dataset](#dataset)
+- [3. Results](#3-results)
+  - [3.1 Triple Extraction: GUpdater](#31-triple-extraction-gupdater)
+  - [3.2 Knowledge Insertion: MEMIT](#32-knowledge-insertion-memit)
+- [4. Some Other Thoughts](#4-some-other-thoughts)
+  - [Flaws of MEMIT](#flaws-of-memit)
+  - [Future Work](#future-work)
+
 
 # 1. Method
 ![fig](/_posts/2023-07-04/pipeline.png)
