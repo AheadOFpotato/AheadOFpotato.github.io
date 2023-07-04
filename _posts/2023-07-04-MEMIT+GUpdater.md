@@ -67,7 +67,7 @@ divide the task into two stages
   * MEMIT is not powerful enough to insert memories into GPT.
   * However, bigger models perform better.
 
-![table2](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/dataset.png?raw=true)
+![table2](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/table2.png?raw=true)
 
 # 4. Some Other Thoughts
 ## Flaws of MEMIT
