@@ -34,7 +34,7 @@ author: huyi
 
 
 # 1. Method
-![fig](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/pipeline.png)
+![fig](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/pipeline.png?raw=true)
 two-stage method:
 1. **Triple Extraction** with [GUpdater](https://aclanthology.org/D19-1265/)
 2. **Knowledge Insertion** with [MEMIT](https://arxiv.org/abs/2210.07229)
@@ -47,10 +47,10 @@ two-stage method:
 ## Dataset
   modify the family tree dataset, only include one kind of update: change the name of one entity
 
-  ![fig](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/family_tree.png)
+  ![fig](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/family_tree.png?raw=true)
 
   text: *{entity_old} changes his or her name into {entity_new}.*
-    ![dataset](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/dataset.png)
+    ![dataset](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/dataset.png?raw=true)
 
 # 3. Results
 divide the task into two stages
@@ -61,13 +61,13 @@ divide the task into two stages
 * **Result:** the accuracy of added triples is low
 * **Reason:** the new triple (like **Dylan** in the showed figure) does not have any link to the other entities in the original KG, so it can be hard to form links between the new triple and the other triples
 
-![table1](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/table1.png)
+![table1](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/table1.png?raw=true)
 ## 3.2 Knowledge Insertion: MEMIT
 * **Result**:
   * MEMIT is not powerful enough to insert memories into GPT.
   * However, bigger models perform better.
 
-![table2](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/table2.png)
+![table2](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_posts/2023-07-04/dataset.png?raw=true)
 
 # 4. Some Other Thoughts
 ## Flaws of MEMIT
