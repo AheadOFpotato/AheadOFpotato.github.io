@@ -16,8 +16,8 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am now a first-year Ph.D. student at [the Institute for Artificial Intelligence](https://www.ai.pku.edu.cn/), Peking University, advised by Prof. [Muhan Zhang](https://muhanzhang.github.io/). Welcome to visit our group page: [Graphpku](https://github.com/GraphPKU)!
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I received my B.S. in Physics from [School of Physics](https://www.phy.pku.edu.cn/), Peking University, where I was fortunate to work with Prof. [Huichao Song](https://inspirehep.net/authors/1029601?ui-citation-summary=true&ui-exclude-self-citations=true) on ML applications in heavy-ion collision.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I am dedicated to exploring the reasoning mechanisms of large language models (LLMs) and researching how to enhance the models' reasoning capabilities to the level of human experts. Additionally, I have a keen interest in various topics related to LLMs, including efficiency, alignment, and applications across different downstream domains etc. If you share these research interests, please feel free to get in touch!
