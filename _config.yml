@@ -311,14 +311,14 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Hu]
+  first_name: [Yi]
 
   style: apa
   locale: en
 
   source: /_bibliography/
-  bibliography: papers.bib
+  bibliography: papers_yihu.bib
   bibliography_template: bib
   # Note: if you have latex math in your bibtex, the latex filter
   # preprocessing may conflict with MathJAX if the latter is enabled.
@@ -360,8 +360,10 @@ filtered_bibtex_keywords:
     google_scholar_id,
     html,
     inspirehep_id,
+    paper,
     pdf,
     poster,
+    code,
     preview,
     selected,
     slides,
