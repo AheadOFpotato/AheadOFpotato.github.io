@@ -8,13 +8,13 @@ profile:
   align: right
   image: yihu.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Email: huyi2002 (at) stu (dot) pku (dot) edu (dot) cn</p>
+  more_info: 
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
+Email: huyi2002 (at) stu (dot) pku (dot) edu (dot) cn
 
 I am now a first-year Ph.D. student at [the Institute for Artificial Intelligence](https://www.ai.pku.edu.cn/), Peking University, advised by Prof. [Muhan Zhang](https://muhanzhang.github.io/). Welcome to visit our group page: [Graphpku](https://github.com/GraphPKU)!
 
