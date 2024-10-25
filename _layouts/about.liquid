@@ -40,6 +40,11 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- 添加访客地图的容器 -->
+    <div style="margin-bottom: 1rem;">
+      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=e5c1e3&w=300&t=m&d=2ReugxrtI327NDQIXpgH10oe6BWX04cm3INCBXkmy70&co=ffffff&ct=b717af&cmo=5371ff&cmn=ff5353'></script>
+    </div>
+
     <!-- News -->
     {% if page.news and site.announcements.enabled %}
       <h2>
