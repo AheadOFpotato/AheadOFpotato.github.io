@@ -22,4 +22,4 @@ I received my B.S. in Physics from [School of Physics](https://www.phy.pku.edu.c
 
 I am dedicated to exploring the **reasoning mechanisms of large language models** (LLMs) and researching how to enhance the models' reasoning capabilities to the level of human experts. Additionally, I have a keen interest in various topics related to LLMs, including efficiency, alignment, and applications across different downstream domains etc. If you share these research interests, please feel free to get in touch!
 
-(I've recently moved to this site, the website is still under construction.)
+(I have recently moved to this site, the website is still under construction.)
