@@ -44,7 +44,7 @@ LLM的reasoning mechanism一直是一个热议话题，先前工作主要做copy
   * 在这种情况下，判断一个句子是否符合这段语法是比较困难的，需要用DP之类的思想。
   * 且保证要有local ambiguous，使得模型不太能有shortcut
   * 语法树深度可以被扩展得很深
-   ![fig](./20250529_phys_of_llm/cfg.png) 
+   ![fig](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_drafts/20250529_phys_of_llm/cfg.png?raw=true) 
 
 ## Main Conclusions
 ### Results 1-3: Transformers can learn such CFGs
@@ -56,7 +56,7 @@ LLM的reasoning mechanism一直是一个热议话题，先前工作主要做copy
 
 实验的模型为GPT2-small(12-layer, 12-head, 768-dimensions)，利用以下PE：
 1. $\text{GPT}_{rel}$: 使用如下的相对位置编码，在hidden state上concat**相对位置编码** for attention的计算
-   * ![fig](./20250529_phys_of_llm/rel_pos.png)
+   * ![fig](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_drafts/20250529_phys_of_llm/rel_pos.png?raw=true)
 2. $\text{GPT}_{rot}$: 用RoPE
 3. $\text{GPT}_{pos}$: 把attention matrix直接替换成$A_{i,j}$仅依赖于$i,j$相对位置的形式，但这个$A_{i,j}=f(i,j)$是可以训的
 4. $\text{GPT}_{uni}$：用fix住的attention matrix，第h个头用uniform average over the previous $2^h-1$个token（？什么意思）
@@ -69,7 +69,7 @@ LLM的reasoning mechanism一直是一个热议话题，先前工作主要做copy
 <font color=#FF6384>💭：这里模型的泛化性如何界定？特别是能否界定模型学到了哪一个hierachy的rule？test sample中的sequence是否没有出现在过pretraining corpus中？</font>
 
 实验结果如下：
-![fig](./20250529_phys_of_llm/result-1-3.png)
+![fig](https://github.com/AheadOFpotato/AheadOFpotato.github.io/blob/main/_drafts/20250529_phys_of_llm/result-1-3.png?raw=true)
 1. 左图展示了不同GPT在不同难度的CFG上的test accuracy，其中cut0表示prompt sequence length为0，cut50表示prompt sequence length为50。
 2. 中间的图展示了模型的生成多样性，作者认为，生成多样性说明了模型并不是在预训练时仅仅记住了CFG的一个subset。
 3. 右图展示了和true CFG distribution的KL divergence。
