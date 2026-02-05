@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Reading Notes of "The Origin of Concepts"
+description: The Origin of Concepts 阅读笔记
 date: 2026-02-05 15:32:00
 tags: Cognitive Science
 categories: sample-posts
