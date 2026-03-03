@@ -5,19 +5,11 @@ date: 2026-02-05 15:32:00
 description: The Origin of Concepts 阅读笔记
 tags: LLM-reasoning, mechanism interpretability
 categories: sample-posts
+toc:
+  beginning: true
 ---
 
 # Reading Notes of "The Origin of Concepts"
-
-- [Reading Notes of "The Origin of Concepts"](#reading-notes-of-the-origin-of-concepts)
-  - [1. Some Preliminaries](#1-some-preliminaries)
-  - [2. The Initial Representational Repertoire: The Empiricist Picture](#2-the-initial-representational-repertoire-the-empiricist-picture)
-  - [3. Core Object Cognition](#3-core-object-cognition)
-  - [4. Core Cognition: Number](#4-core-cognition-number)
-  - [5. Core Cognition: Agency](#5-core-cognition-agency)
-  - [6. Representations of *Cause*](#6-representations-of-cause)
-
-
 ## 1. Some Preliminaries
 
 Human beings possess rich conceptual understanding of the world. We can understand the conceptual representation process over three different time courses:
