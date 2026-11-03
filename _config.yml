@@ -106,6 +106,7 @@ whatsapp_number: # your WhatsApp number (full phone number in international form
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
 work_url: # work page URL
+xiaohongshu_url: https://www.xiaohongshu.com/user/profile/5b6c17f76b58b714187f1fb1 # Xiaohongshu profile
 x_username: # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
@@ -131,8 +132,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: Research Notes # blog_name will be displayed in your blog page
+blog_description: Notes on language models, reasoning, and interpretability
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -246,6 +247,37 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - assets/jupyter/blog.ipynb
+  # al-folio demo posts are kept as source examples, but are not part of the site.
+  - _posts/2015-03-15-formatting-and-links.md
+  - _posts/2015-05-15-images.md
+  - _posts/2015-07-15-code.md
+  - _posts/2015-10-20-disqus-comments.md
+  - _posts/2015-10-20-math.md
+  - _posts/2018-12-22-distill.md
+  - _posts/2020-09-28-twitter.md
+  - _posts/2021-07-04-diagrams.md
+  - _posts/2022-02-01-redirect.md
+  - _posts/2022-12-10-giscus-comments.md
+  - _posts/2023-03-20-table-of-contents.md
+  - _posts/2023-03-21-tables.md
+  - _posts/2023-04-24-videos.md
+  - _posts/2023-04-25-audios.md
+  - _posts/2023-04-25-sidebar-table-of-contents.md
+  - _posts/2023-05-12-custom-blockquotes.md
+  - _posts/2023-07-04-jupyter-notebook.md
+  - _posts/2023-07-12-post-bibliography.md
+  - _posts/2023-12-12-tikzjax.md
+  - _posts/2024-01-26-chartjs.md
+  - _posts/2024-01-26-echarts.md
+  - _posts/2024-01-26-geojson-map.md
+  - _posts/2024-01-27-advanced-images.md
+  - _posts/2024-01-27-code-diff.md
+  - _posts/2024-01-27-vega-lite.md
+  - _posts/2024-04-15-pseudocode.md
+  - _posts/2024-04-28-post-citation.md
+  - _posts/2024-04-29-typograms.md
+  - _posts/2024-05-01-tabs.md
 keep_files:
   - CNAME
   - .nojekyll
@@ -275,6 +307,12 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: ""
+      type: posts
+    values:
+      toc:
+        sidebar: left
 
 sass:
   style: compressed
@@ -303,8 +341,8 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_tags: ["reasoning", "interpretability"] # these tags will be displayed on the front page of your blog
+display_categories: ["research-notes"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

@@ -3,8 +3,8 @@ layout: post
 title: Physics of Language Models 阅读笔记
 date: 2025-06-02 15:32:00
 description: 在ICML听了Allen Zhu的tutorial，觉得很有启发，最近发现phys of LMs系列还在不断更新，写一篇阅读笔记系统整理一下。
-tags: LLM-reasoning, mechanism interpretability
-categories: sample-posts
+tags: [reasoning, interpretability]
+categories: [research-notes]
 ---
 
 ## Paper List:

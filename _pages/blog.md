@@ -56,7 +56,13 @@ pagination:
   </div>
   {% endif %}
 
-{% assign featured_posts = site.posts | where: "featured", "true" %}
+{% assign featured_candidates = site.posts | where: "featured", "true" %}
+{% assign featured_posts = "" | split: "" %}
+{% for post in featured_candidates %}
+  {% unless site.data.template_posts contains post.slug %}
+    {% assign featured_posts = featured_posts | push: post %}
+  {% endunless %}
+{% endfor %}
 {% if featured_posts.size > 0 %}
 <br>
 
@@ -110,6 +116,7 @@ pagination:
     {% endif %}
 
     {% for post in postlist %}
+    {% if site.data.template_posts contains post.slug %}{% continue %}{% endif %}
 
     {% if post.external_source == blank %}
       {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}

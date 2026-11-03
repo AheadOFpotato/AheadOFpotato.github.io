@@ -3,8 +3,8 @@ layout: post
 title: 调研 reasoning models 的推理机制
 date: 2025-04-13 15:32:25
 description: a blog about reasoning mechanisms of reasoning models
-tags: reasoning-models
-categories: sample-posts
+tags: [reasoning, interpretability]
+categories: [research-notes]
 tabs: true
 ---
 

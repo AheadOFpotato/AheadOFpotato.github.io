@@ -383,7 +383,14 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    font-size: 2.025rem;
+    line-height: 1;
+
+    a { flex: 0 0 auto; }
 
     a {
       i::before {
@@ -1303,4 +1310,49 @@ ninja-keys::part(ninja-input-wrapper) {
 ::highlight(search) {
   background-color: var(--global-theme-color);
   color: var(--global-text-color);
+}
+
+// Keep research figures readable without enlarging their intrinsic dimensions.
+.post-content #markdown-content img {
+  display: block;
+  max-width: min(100%, 620px);
+  max-height: 420px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 1.25rem auto;
+}
+
+#toc-sidebar {
+  top: 5rem;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+
+// Simple Icons Xiaohongshu mark, displayed as a monochrome square.
+.social .contact-icons .xiaohongshu-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.025rem;
+  height: 2.025rem;
+  border-radius: .33rem;
+  color: var(--global-text-color);
+  background: currentColor;
+  transition: color .2s ease-in-out;
+
+  &:hover { color: var(--global-theme-color); }
+
+  .xiaohongshu-icon {
+    width: 100%;
+    height: 100%;
+    background: var(--global-bg-color);
+    mask: url('../img/xiaohongshu.svg') center / 100% 100% no-repeat;
+    -webkit-mask: url('../img/xiaohongshu.svg') center / 100% 100% no-repeat;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 800px) {
+  .social .contact-icons { font-size: 1.55rem; gap: .6rem; }
+  .social .contact-icons .xiaohongshu-link { width: 1.55rem; height: 1.55rem; }
 }

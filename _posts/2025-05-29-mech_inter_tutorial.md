@@ -3,8 +3,8 @@ layout: post
 title: 大模型机制可解释性tutorial
 date: 2025-05-29 15:32:00
 description: 整理一下language model这块的入门资料。
-tags: LLM-reasoning, mechanism interpretability
-categories: sample-posts
+tags: [reasoning, interpretability]
+categories: [research-notes]
 ---
 
 

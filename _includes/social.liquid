@@ -43,6 +43,9 @@
 {% if site.github_username %}
   <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fa-brands fa-github"></i></a>
 {% endif %}
+{% if site.xiaohongshu_url %}
+  <a href="{{ site.xiaohongshu_url | escape }}" class="xiaohongshu-link" title="小红书" aria-label="小红书"><span class="xiaohongshu-icon" aria-hidden="true"></span></a>
+{% endif %}
 {% if site.linkedin_username %}
   <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
 {% endif %}

@@ -9,6 +9,8 @@ nav_order: 2
 
 <!-- _pages/publications.md -->
 
+\* indicates equal contribution.
+
 <!-- Bibsearch Feature -->
 
 {% include bib_search.liquid %}

@@ -1,0 +1,43 @@
+slides:
+  - date: 2026-08-20
+    title: "Prover Series"
+    topic: "AI for Mathematics"
+    description: "A tour of formal theorem proving, from Lean and DeepSeek-Prover to Seed-Prover and geometry."
+    file: /assets/meeting/2026_08_20_prover_series.pdf
+    format: PDF
+    thumbnail: /assets/img/meeting/2026_08_20_prover_series.jpg
+  - date: 2026-02-06
+    title: "An Introduction to Latent Reasoning"
+    topic: "Latent Reasoning"
+    description: "An introduction to reasoning in continuous states, recurrent Transformers, Coconut, and mechanistic interpretability."
+    file: /assets/meeting/2026_02_06_continuous_token.pdf
+    format: PDF
+    thumbnail: /assets/img/meeting/2026_02_06_continuous_token.jpg
+  - date: 2025-05-23
+    title: "Open the Black Box: Transformer Circuit Thread"
+    topic: "Interpretability"
+    description: "Reading notes on Transformer circuits, circuit tracing, and the biology of language models."
+    file: /assets/meeting/2025_05_23_llm_biology.pdf
+    format: PDF
+    thumbnail: /assets/img/meeting/2025_05_23_llm_biology.jpg
+  - date: 2024-10-15
+    title: "Memorization or Generalization: Some Empirical Results"
+    topic: "Generalization"
+    description: "Empirical studies of compositionality, mathematical reasoning, and number understanding in Transformers."
+    file: /assets/meeting/2024_10_15_memorize_generalize_final.pdf
+    format: PDF
+    thumbnail: /assets/img/meeting/2024_10_15_memorize_generalize_final.jpg
+  - date: 2024-03-04
+    title: "Back to RNN?"
+    topic: "Model Architecture"
+    description: "From linear attention and state space models to Mamba, Griffin, and recurrent sequence models."
+    file: /assets/meeting/2024_03_04_Back_to_RNN.pdf
+    format: PDF
+    thumbnail: /assets/img/meeting/2024_03_04_Back_to_RNN.jpg
+  - date: 2023-11-10
+    title: "Grokking"
+    topic: "Generalization"
+    description: "Why can generalization emerge long after memorization? A look at grokking and its mechanisms."
+    file: /assets/meeting/2023_11_10_Grokking.pdf
+    format: PDF
+    thumbnail: /assets/img/meeting/2023_11_10_Grokking.jpg
